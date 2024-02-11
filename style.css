@@ -1,0 +1,82 @@
+@font-face {
+	font-family: "Limkin";
+	src: url("/assets/fonts/GDLimkinVF.woff2");
+	font-weight: 100 900;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-wrap: pretty;
+}
+:root {
+	--pink: #f3a8dd;
+	--green: #98db6b;
+	--blue: #5adee8;
+	--yellow: #fdc03a;
+	--purple: #a690fc;
+	--red: #ff734d;
+	--white: #e5e5e5;
+	--black: #353535;
+}
+body {
+	font-family: "Limkin", sans-serif;
+	font-variation-settings: "wght" 300, "SRFF" 50;
+	font-weight: 300;
+	background-color: var(--white);
+	color: var(--black);
+	font-size: 24px;
+	line-height: 1.4em;
+}
+main {
+	padding: 5vw;
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+h1 {
+	font-variation-settings: "wght" 500, "SRFF" 50;
+	font-weight: 500;
+	line-height: 1.2em;
+	letter-spacing: -0.02em;
+	font-size: 48px;
+}
+h2 {
+	font-variation-settings: "wght" 550, "SRFF" 50;
+	font-weight: 550;
+	line-height: 1.4em;
+	font-size: 24px;
+	margin-top: 24px;
+}
+ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+ul a {
+	line-height: 1.4em;
+	font-size: 24px;
+	font-variation-settings: "wght" 400, "SRFF" 50;
+	font-weight: 400;
+	color: var(--black);
+	text-decoration: none;
+	border: 4px double var(--black);
+	padding: 10px 10px 5px 10px;
+	display: block;
+	transition: .2s;
+}
+ul a:hover {
+	background-color: var(--black);
+	color: var(--white);
+}
+ul a:active {
+	opacity: .5;
+}
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 32px;
+	}
+}
