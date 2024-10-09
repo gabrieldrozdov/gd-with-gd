@@ -332,31 +332,35 @@ img, svg {
 	opacity: 1;
 	transition: opacity .2s;
 	pointer-events: none;
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(255,255,255,.25);
 }
 .home-project-thumbnails[data-active="0"] {
 	opacity: 0;
 }
-.home-project-thumbnails img {
+.home-project-thumbnails iframe {
 	position: absolute;
-	padding: 20px;
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
+	background-color: white;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(.5);
+	width: 150%;
+	aspect-ratio: 4/3;
 	opacity: 1;
+	border-radius: 20px;
 	transition: opacity .2s;
-	animation: home-project-thumbnails-img 1s infinite alternate ease-in-out;
+	border: unset;
+	/* animation: home-project-thumbnails-preview 2s infinite alternate ease-in-out; */
 }
-@keyframes home-project-thumbnails-img {
+.home-project-thumbnails iframe[data-active="0"] {
+	opacity: 0;
+}
+@keyframes home-project-thumbnails-preview {
 	from {
-		transform: scale(.9);
+		transform: translate(-50%, -50%) scale(.5);
 	}
 	to {
-		transform: scale(1);
+		transform: translate(-50%, -50%) scale(.6);
 	}
-}
-.home-project-thumbnails img[data-active="0"] {
-	opacity: 0;
 }
 @media only screen and (max-width: 1100px) {
 	.home-projects {

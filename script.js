@@ -110,15 +110,23 @@ initializeIntroTitle();
 // Project thumbnails
 for (let homeProject of document.querySelectorAll('.home-project')) {
 	const homeProjectThumbnails = document.querySelector('.home-project-thumbnails');
-	const projectNumber = homeProject.dataset.project;
-	const thumbnail = homeProjectThumbnails.querySelector(`[data-project="${projectNumber}"]`);
+	let homeProjectThumbnailsIframe;
 	homeProject.addEventListener('mouseenter', () => {
 		homeProjectThumbnails.dataset.active = 1;
-		thumbnail.dataset.active = 1;
+		homeProjectThumbnailsIframe = document.createElement('iframe');
+		homeProjectThumbnailsIframe.src = homeProject.href;
+		homeProjectThumbnailsIframe.dataset.active = 0;
+		homeProjectThumbnails.appendChild(homeProjectThumbnailsIframe);
+		setTimeout(() => {
+			homeProjectThumbnailsIframe.dataset.active = 1;
+		}, 200)
 	})
 	homeProject.addEventListener('mouseleave', () => {
 		homeProjectThumbnails.dataset.active = 0;
-		thumbnail.dataset.active = 0;
+		homeProjectThumbnailsIframe.dataset.active = 0;
+		setTimeout(() => {
+			homeProjectThumbnailsIframe.remove();
+		}, 200)
 	})
 }
 
