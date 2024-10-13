@@ -25,7 +25,7 @@ function titleBubble() {
 		colorIndex = 0;
 	}
 }
-setInterval(titleBubble, 250);
+setInterval(titleBubble, 400);
 
 // Favicon loop
 let faviconNumber = 2;

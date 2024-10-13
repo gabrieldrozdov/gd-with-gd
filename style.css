@@ -76,7 +76,7 @@ img, svg {
 }
 .home-title-outline {
 	color: transparent;
-	-webkit-text-stroke: 1px var(--black);
+	-webkit-text-stroke: 2px var(--black);
 	z-index: 99;
 }
 .home-title-with {
@@ -110,7 +110,6 @@ img, svg {
 .home-title-callout {
 	position: absolute;
 	z-index: 100;
-	filter: drop-shadow(0 0 20px rgba(0,0,0,.1));
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -118,7 +117,7 @@ img, svg {
 }
 .home-title-callout span {
 	color: var(--black);
-	background-color: rgba(255,255,255,.9);
+	background-color: white;
 	padding: .8em 1.5em .6em 1.5em;
 	font-size: 18px;
 	letter-spacing: -0.02em;
@@ -129,7 +128,7 @@ img, svg {
 	font-variation-settings: "wght" 650, 'SRFF' 0;
 }
 .home-title-callout svg {
-	fill: rgba(255,255,255,.9);
+	fill: white;
 	width: 40px;
 	margin: -.5px 0;
 }
