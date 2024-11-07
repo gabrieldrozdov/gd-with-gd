@@ -9,7 +9,6 @@
 	box-sizing: border-box;
 	text-wrap: pretty;
 	scroll-behavior: smooth;
-	scroll-padding-top: 5px;
 }
 :root {
 	--red: #FF734D;
