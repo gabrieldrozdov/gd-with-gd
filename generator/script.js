@@ -244,8 +244,8 @@ function toggleText(val) {
 	output.dataset.text = val;
 }
 function resetTextSettings() {
-	setTextFillColor('var(--black)');
-	setTextOutlineColor('var(--black)');
+	setTextFillColor('var(--off-black)');
+	setTextOutlineColor('var(--off-black)');
 	resetFontSize();
 	resetFontWeight();
 	resetFontSerif();
@@ -554,8 +554,8 @@ function resetAnnotationTopPosition() {
 	annotation.style.left = "20vmin";
 }
 function resetAnnotationTopSettings() {
-	setAnnotationTopBackgroundColor('white');
-	setAnnotationTopFontColor('var(--black)');
+	setAnnotationTopBackgroundColor('var(--off-white)');
+	setAnnotationTopFontColor('var(--off-black)');
 	resetAnnotationTopFontSize();
 	resetAnnotationTopFontWeight();
 	resetAnnotationTopFontSerif();
@@ -719,8 +719,8 @@ function resetAnnotationBottomPosition() {
 	annotation.style.right = "20vmin";
 }
 function resetAnnotationBottomSettings() {
-	setAnnotationBottomBackgroundColor('white');
-	setAnnotationBottomFontColor('var(--black)');
+	setAnnotationBottomBackgroundColor('var(--off-white)');
+	setAnnotationBottomFontColor('var(--off-black)');
 	resetAnnotationBottomFontSize();
 	resetAnnotationBottomFontWeight();
 	resetAnnotationBottomFontSerif();

@@ -17,22 +17,22 @@
 	--yellow: #fcc03a;
 	--pink: #F3A8DD;
 	--green: #98DB6B;
-	--black: #353535;
-	--black2: #282828;
-	--black3: #1b1b1b;
-	--white: #e5e5e5;
+	--off-white: #fafafa;
+	--light-gray: #e5e5e5;
+	--dark-gray: #353535;
+	--off-black: #282828;
 
 	/* Output variables */
 	--output-width: 100vmin;
 	--output-height: 75vmin;
 
-	--background-primary-color: var(--white);
+	--background-primary-color: var(--light-gray);
 	--background-secondary-color: unset;
 	--background-size: 2vmin;
 	--background-move-speed: 2s;
 
-	--text-fill-color: var(--black);
-	--text-outline-color: var(--black);
+	--text-fill-color: var(--off-black);
+	--text-outline-color: var(--off-black);
 
 	--bubble-fill-color: unset;
 	--bubble-outline-color: unset;
@@ -46,8 +46,8 @@
 	--font-rotation: -2deg;
 
 	--annotation-top-font-size: 2vmin;
-	--annotation-top-background-color: white;
-	--annotation-top-font-color: var(--black);
+	--annotation-top-background-color: var(--off-white);
+	--annotation-top-font-color: var(--off-black);
 	--annotation-top-font-weight: 650;
 	--annotation-top-font-serif: 0;
 	--annotation-top-font-drift: 1;
@@ -55,8 +55,8 @@
 	--annotation-top-font-rotation: -5deg;
 
 	--annotation-bottom-font-size: 2vmin;
-	--annotation-bottom-background-color: white;
-	--annotation-bottom-font-color: var(--black);
+	--annotation-bottom-background-color: var(--off-white);
+	--annotation-bottom-font-color: var(--off-black);
 	--annotation-bottom-font-weight: 650;
 	--annotation-bottom-font-serif: 0;
 	--annotation-bottom-font-drift: 1;
@@ -74,8 +74,8 @@ body {
 	font-family: "Limkin", sans-serif;
 	font-variation-settings: "wght" 550, "SRFF" 0;
 	font-weight: 550;
-	background-color: var(--black3);
-	color: var(--white);
+	background-color: var(--off-black);
+	color: var(--off-white);
 }
 
 /* Fullscreen */
@@ -122,14 +122,14 @@ body[data-fullscreen="1"] .fullscreen-notice {
 	right: 0;
 	left: 0;
 	height: 40px;
-	background-color: var(--black);
+	background-color: var(--dark-gray);
 	z-index: 9;
 	display: flex;
 	align-items: stretch;
 	gap: 2px;
 	white-space: nowrap;
 	overflow-x: scroll;
-	border-bottom: 2px solid var(--black3);
+	border-bottom: 2px solid var(--off-black);
 }
 body[data-fullscreen="1"] .header {
 	display: none;
@@ -139,7 +139,7 @@ body[data-fullscreen="1"] .header {
 	align-items: stretch;
 	font-size: 14px;
 	height: 100%;
-	color: var(--white);
+	color: var(--off-white);
 	gap: 10px;
 }
 .header-title span {
@@ -151,8 +151,8 @@ body[data-fullscreen="1"] .header {
 }
 .header-title a {
 	font-variation-settings: "wght" 600, "SRFF" 0;
-	color: var(--black);
-	background-color: var(--white);
+	color: var(--dark-gray);
+	background-color: var(--off-white);
 	padding: .2em 10px 0 10px;
 	display: inline-flex;
 	align-items: center;
@@ -205,14 +205,14 @@ body[data-fullscreen="1"] .header {
 	padding: .2em 10px 0 10px;
 	line-height: 1em;
 	border: unset;
-	color: var(--white);
+	color: var(--off-white);
 	cursor: pointer;
 	height: 100%;
-	background-color: var(--black2);
+	background-color: var(--off-black);
 }
 .header-btn:hover {
-	background-color: var(--white);
-	color: var(--black);
+	background-color: var(--off-white);
+	color: var(--off-black);
 }
 .header-btn:active {
 	opacity: .5;
@@ -259,8 +259,8 @@ body[data-fullscreen="1"] .controls {
 	display: none;
 }
 .controls-section {
-	--primary: var(--white);
-	color: var(--black);
+	--primary: var(--off-white);
+	color: var(--off-black);
 	background-color: var(--primary);
 	display: flex;
 	flex-direction: column;
@@ -278,7 +278,7 @@ body[data-fullscreen="1"] .controls {
 .controls-subsection {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--black2);
+	background-color: var(--off-black);
 }
 .controls-subsection-gap {
 	gap: 2px;
@@ -291,14 +291,14 @@ body[data-fullscreen="1"] .controls {
 	line-height: 1em;
 	letter-spacing: .03em;
 	font-variation-settings: "wght" 600, "SRFF" 0;
-	color: var(--white);
+	color: var(--off-white);
 	padding: .6em 5px .4em 5px;
 }
 
 /* Text input */
 .controls-input {
 	display: block;
-	background-color: var(--white);
+	background-color: var(--off-white);
 	border: unset;
 	width: 100%;
 	font-family: inherit;
@@ -321,7 +321,7 @@ body[data-fullscreen="1"] .controls {
 }
 .controls-slider {
 	-webkit-appearance: none;
-	background-color: var(--black);
+	background-color: var(--dark-gray);
 	margin: unset;
 	width: 100%;
 	height: 24px;
@@ -338,7 +338,7 @@ body[data-fullscreen="1"] .controls {
 	cursor: grab;
 }
 .controls-slider::-webkit-slider-thumb:hover {
-	background-color: var(--white);
+	background-color: var(--off-white);
 }
 .controls-slider::-webkit-slider-thumb:active {
 	cursor: grabbing;
@@ -347,17 +347,17 @@ body[data-fullscreen="1"] .controls {
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	background: var(--black2);
+	background: var(--off-black);
 	cursor: grab;
 }
 .controls-slider::-moz-range-thumb:hover {
-	background-color: var(--black);
+	background-color: var(--dark-gray);
 }
 .controls-slider::-moz-range-thumb:active {
 	cursor: grabbing;
 }
 .controls-slider-label {
-	color: var(--white);
+	color: var(--off-white);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -368,7 +368,7 @@ body[data-fullscreen="1"] .controls {
 	padding-top: .2em;
 	letter-spacing: .03em;
 	font-variation-settings: "wght" 600, "SRFF" 0;
-	background-color: var(--black);
+	background-color: var(--dark-gray);
 	cursor: pointer;
 }
 .controls-slider-label:hover {
@@ -385,14 +385,14 @@ body[data-fullscreen="1"] .controls {
 }
 .controls-toggles-gap {
 	gap: 2px;
-	background-color: var(--black2);
+	background-color: var(--off-black);
 }
 .controls-toggles > div {
-	color: var(--white);
+	color: var(--off-white);
 	flex-grow: 1;
 	width: 24px;
 	height: 24px;
-	background-color: var(--black);
+	background-color: var(--dark-gray);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -413,7 +413,7 @@ body[data-fullscreen="1"] .controls {
 .controls-toggle-empty {
 	position: relative;
 	overflow: hidden;
-	background-color: var(--white) !important;
+	background-color: var(--off-white) !important;
 }
 .controls-toggle-empty div {
 	position: absolute;
@@ -441,7 +441,7 @@ body[data-fullscreen="1"] .output-container {
 	right: 0;
 }
 .output {
-	outline: 2px solid var(--black);
+	outline: 2px solid var(--dark-gray);
 	width: var(--output-width);
 	height: var(--output-height);
 	background-color: var(--background-primary-color);
@@ -641,7 +641,7 @@ body[data-fullscreen="1"] .output-container {
 		transform: unset !important;
 	}
 	.output {
-		border: 2px solid var(--black);
+		border: 2px solid var(--dark-gray);
 		outline: unset !important;
 		position: relative;
 		top: unset !important;

@@ -17,17 +17,17 @@
 	--yellow: #fcc03a;
 	--pink: #F3A8DD;
 	--green: #98DB6B;
-	--black: #353535;
-	--black2: #282828;
-	--black3: #1b1b1b;
-	--white: #e5e5e5;
+	--off-white: #fafafa;
+	--light-gray: #e5e5e5;
+	--dark-gray: #353535;
+	--off-black: #282828;
 }
 body {
 	font-family: "Limkin", sans-serif;
 	font-variation-settings: "wght" 550, "SRFF" 0;
 	font-weight: 550;
-	background-color: var(--black3);
-	color: var(--white);
+	background-color: var(--off-black);
+	color: var(--off-white);
 }
 img, svg {
 	display: block;
@@ -51,7 +51,7 @@ img, svg {
 	position: sticky;
 	top: 0;
 	overflow: hidden;
-	background-color: var(--white);
+	background-color: var(--light-gray);
 }
 .home-title-text {
 	line-height: .8em;
@@ -71,11 +71,11 @@ img, svg {
 	white-space: nowrap;
 }
 .home-title-solid {
-	color: var(--black);
+	color: var(--off-black);
 }
 .home-title-outline {
 	color: transparent;
-	-webkit-text-stroke: 2px var(--black);
+	-webkit-text-stroke: 2px var(--off-black);
 	z-index: 99;
 }
 .home-title-with {
@@ -115,7 +115,7 @@ img, svg {
 	transform: translate(-50%, -50%);
 }
 .home-title-callout span {
-	color: var(--black);
+	color: var(--off-black);
 	background-color: white;
 	padding: .8em 1.5em .6em 1.5em;
 	font-size: 18px;
@@ -179,8 +179,8 @@ img, svg {
 
 /* Intro */
 .home-intro {
-	color: var(--white);
-	background-color: var(--black);
+	color: var(--off-white);
+	background-color: var(--off-black);
 	padding: 20px;
 	min-height: 100vh;
 	align-items: center;
@@ -201,19 +201,21 @@ img, svg {
 	max-width: 20em;
 }
 .home-intro-link {
-	background-color: var(--white);
+	background-color: var(--off-white);
 	text-decoration: none;
 	border-radius: 100px;
-	color: var(--black);
+	color: var(--off-black);
 	font-size: .8em;
 	padding: .3em 1em .1em 1em;
 	display: inline-block;
-	border: 1px solid var(--white);
+	border: 1px solid var(--off-white);
+	font-weight: 650;
+	font-variation-settings: "wght" 650, 'SRFF' 0;
 	transition: color .2s, transform .2s, background-color .2s, opacity .2s;
 }
 .home-intro-link:hover {
-	background-color: var(--black);
-	color: var(--white);
+	background-color: var(--off-black);
+	color: var(--off-white);
 	transform: scale(1.05);
 }
 .home-intro-link:active {
@@ -237,7 +239,7 @@ img, svg {
 }
 .home-project {
 	text-decoration: none;
-	color: var(--black);
+	color: var(--off-black);
 	flex-shrink: 0;
 	aspect-ratio: 1/1;
 	background-color: var(--primary);
@@ -245,8 +247,8 @@ img, svg {
 	transition: background-color .2s, color .2s, opacity .2s;
 }
 .home-project:hover {
-	background-color: var(--white);
-	color: var(--white);
+	background-color: var(--off-white);
+	color: var(--off-white);
 }
 .home-project:active {
 	opacity: .5;
@@ -269,7 +271,7 @@ img, svg {
 	transform: rotate(4deg);
 }
 .home-project:hover .home-project-content {
-	background-color: var(--black);
+	background-color: var(--off-black);
 	transform: scale(.9) rotate(4deg);
 }
 .home-project:nth-child(even):hover .home-project-content {
@@ -390,18 +392,28 @@ img, svg {
 
 /* Footer */
 .home-footer {
-	background-color: var(--black3);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--white);
-	flex-direction: column;
-	gap: 20px;
+	background-color: var(--off-black);
+	color: var(--off-white);
 	font-size: max(24px, 1.5vw);
-	padding: 80px 20px;
+	padding: 20px;
 	min-height: 50vh;
 	text-align: center;
 	letter-spacing: -0.04em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.home-footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+	background-color: var(--dark-gray);
+	border-radius: 50%;
+	padding: 40px;
+	aspect-ratio: 1/1;
+	max-width: 800px;
 }
 .home-footer p {
 	max-width: 800px;
@@ -425,17 +437,17 @@ img, svg {
 }
 .home-footer p a {
 	text-decoration: none;
-	color: var(--black3);
+	color: var(--off-black);
 	display: inline-block;
 	border-radius: 40px;
 	padding: .4em .6em .2em .6em;
-	border: 1px solid var(--white);
-	background-color: var(--white);
+	border: 1px solid var(--off-white);
+	background-color: var(--off-white);
 	margin: 5px;
 }
 .home-footer p a:hover {
-	background-color: var(--black3);
-	color: var(--white);
+	background-color: var(--off-black);
+	color: var(--off-white);
 }
 .home-footer p a:active {
 	opacity: .5;
