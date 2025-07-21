@@ -13,6 +13,8 @@ function titleBubble() {
 	homeTitle.appendChild(newBubble);
 	setTimeout(() => {
 		newBubble.style.opacity = 1;
+		newBubble.style.left = Math.round(Math.random()*100) + "%";
+		newBubble.style.top = Math.round(Math.random()*100) + "%";
 	}, 50)
 	setTimeout(() => {
 		newBubble.style.opacity = 0;
@@ -55,7 +57,7 @@ function initializeTitle() {
 	}
 	setInterval(changeTitle, 1000);
 }
-initializeTitle();
+// initializeTitle();
 
 // Helloooooo animation
 let helloDirection = true;
@@ -112,62 +114,79 @@ for (let homeProject of document.querySelectorAll('.home-project')) {
 	const homeProjectThumbnails = document.querySelector('.home-project-thumbnails');
 	let homeProjectThumbnailsIframe;
 	homeProject.addEventListener('mouseenter', () => {
-		homeProjectThumbnails.dataset.active = 1;
-		homeProjectThumbnailsIframe = document.createElement('iframe');
-		homeProjectThumbnailsIframe.src = homeProject.href;
-		homeProjectThumbnailsIframe.dataset.active = 0;
-		homeProjectThumbnails.appendChild(homeProjectThumbnailsIframe);
-		setTimeout(() => {
-			homeProjectThumbnailsIframe.dataset.active = 1;
-		}, 200)
+		if (window.innerWidth > 700) {
+			homeProjectThumbnails.dataset.active = 1;
+			homeProjectThumbnailsIframe = document.createElement('iframe');
+			homeProjectThumbnailsIframe.src = homeProject.href;
+			homeProjectThumbnailsIframe.dataset.active = 0;
+			homeProjectThumbnails.appendChild(homeProjectThumbnailsIframe);
+			setTimeout(() => {
+				homeProjectThumbnailsIframe.dataset.active = 1;
+			}, 50)
+		}
 	})
 	homeProject.addEventListener('mouseleave', () => {
-		homeProjectThumbnails.dataset.active = 0;
-		homeProjectThumbnailsIframe.dataset.active = 0;
-		setTimeout(() => {
-			homeProjectThumbnailsIframe.remove();
-		}, 200)
+		if (window.innerWidth > 700) {
+			homeProjectThumbnails.dataset.active = 0;
+			homeProjectThumbnailsIframe.dataset.active = 0;
+			setTimeout(() => {
+				homeProjectThumbnailsIframe.remove();
+			}, 50)
+		}
 	})
 }
 
-// Helper function to shuffle array
-function shuffle(array) {
-	let currentIndex = array.length, randomIndex;
-
-	// While there remain elements to shuffle.
-	while (currentIndex > 0) {
-
-		// Pick a remaining element.
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
-
-		// And swap it with the current element.
-		[array[currentIndex], array[randomIndex]] = [
-			array[randomIndex], array[currentIndex]];
-	}
-
-	return array;
+// Footer links
+for (let homeProject of document.querySelectorAll('.home-footer-link')) {
+	const homeProjectThumbnails = document.querySelector('.home-project-thumbnails');
+	let homeProjectThumbnailsIframe;
+	homeProject.addEventListener('mouseenter', () => {
+		if (window.innerWidth > 700) {
+			homeProjectThumbnails.dataset.active = 1;
+			homeProjectThumbnailsIframe = document.createElement('iframe');
+			homeProjectThumbnailsIframe.src = homeProject.href;
+			homeProjectThumbnailsIframe.dataset.active = 0;
+			homeProjectThumbnails.appendChild(homeProjectThumbnailsIframe);
+			setTimeout(() => {
+				homeProjectThumbnailsIframe.dataset.active = 1;
+			}, 50)
+		}
+	})
+	homeProject.addEventListener('mouseleave', () => {
+		if (window.innerWidth > 700) {
+			homeProjectThumbnails.dataset.active = 0;
+			homeProjectThumbnailsIframe.dataset.active = 0;
+			setTimeout(() => {
+				homeProjectThumbnailsIframe.remove();
+			}, 50)
+		}
+	})
 }
 
 // Project colors
 function setProjectColors() {
-	let colors = ["red", "blue", "pink", "yellow", "purple", "green"];
-	let colorOrder = shuffle(colors);
-	let colorIndex1 = 0;
+	let colors = ["pink", "green", "blue", "yellow", "purple", "red"];
+	let colorIndex = 0;
 	for (let homeProject of document.querySelectorAll('.home-project')) {
-		// Pick two colors to use for project color palette
-		const remainingColors = colors.filter((_, index) => index !== colorIndex1);
-		const colorIndex2 = Math.floor(Math.random()*remainingColors.length);
-		const color1 = colors[colorIndex1];
-		const color2 = remainingColors[colorIndex2];
-
-		homeProject.style.setProperty('--primary', `var(--${color1})`);
-		homeProject.style.setProperty('--secondary', `var(--${color2})`);
-
-		colorIndex1++;
-		if (colorIndex1 >= colorOrder.length) {
-			colorIndex1 = 0;
+		const color = colors[colorIndex];
+		colorIndex++;
+		if (colorIndex >= colors.length) {
+			colorIndex = 0;
 		}
+		homeProject.style.setProperty('--primary', `var(--${color})`);
 	}
 }
 setProjectColors();
+
+// Scroll to projects
+let homeIntroLink = document.querySelector('.home-intro-link');
+homeIntroLink.addEventListener('click', (e) => {
+	e.preventDefault();
+	const targetElement = document.querySelector('#projects');
+    if (targetElement) {
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+})
